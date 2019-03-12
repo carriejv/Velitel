@@ -41,28 +41,31 @@ export class EnumArgument extends GenericArgument<string> {
      * Adds a possible value to the enum.
      * @param value The value to add.
      */
-    public withMember(value: string): void {
+    public withMember(value: string): EnumArgument {
         this.acceptableValues.push(this.caseSensitive ? value : value.toLowerCase());
+        return this;
     }
 
     /**
      * Adds an array of possible values to the enum.
      * @param value The value to add.
      */
-    public withMembers(values: string[]): void {
+    public withMembers(values: string[]): EnumArgument {
         values.forEach( v => {
-            this.acceptableValues.push(this.caseSensitive ? v : v.toLowerCase());
+            this.withMember(v);
         });
+        return this;
     }
 
     /**
      * Sets the enum to case-insensitive matching mode.
      */
-    public withCaseInsensitiveMatching(): void {
+    public withCaseInsensitiveMatching(): EnumArgument {
         this.acceptableValues.forEach( (v, k) => {
             this.acceptableValues[k] = v.toLowerCase();
         });
         this.caseSensitive = false;
+        return this;
     }
 
 }
