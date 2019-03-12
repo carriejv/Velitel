@@ -4,6 +4,14 @@
         "tslint:recommended"
     ],
     "jsRules": {},
-    "rules": {},
+    "rules": {
+        "no-parameter-properties": false,
+        "whitespace": false,
+        "typedef-whitespace": false,
+        "no-require-imports": false,
+        "switch-default": false,
+        "no-switch-case-fall-through": false,
+        "quotemark": [true, "single", "double"]
+    },
     "rulesDirectory": []
 }

@@ -1,5 +1,5 @@
-import { InvalidInputException } from "../errors/invalid-input-exception";
-import { GenericArgument } from "./generic-argument";
+import { InvalidInputException } from '../errors/invalid-input-exception';
+import { GenericArgument } from './generic-argument';
 
 /**
  * An argument which accepts a string.
@@ -7,14 +7,14 @@ import { GenericArgument } from "./generic-argument";
  */
 export class StringArgument extends GenericArgument<string> {
 
-    public arg: string;
-    public name: string;
-    public desc: string;
-    public value: string;
+    public arg      : string;
+    public name     : string;
+    public desc     : string;
+    public value    : string;
 
-    public regex:       RegExp;
-    public minLength:   number;
-    public maxLength:   number;
+    public regex        : RegExp;
+    public minLength    : number;
+    public maxLength    : number;
 
     constructor(arg: string) {
         super(arg);
@@ -35,12 +35,12 @@ export class StringArgument extends GenericArgument<string> {
         if (input.length < this.minLength) {
             throw new InvalidInputException(
                 `The input must be longer than ${this.minLength} characters.`,
-            );            
+            );
         }
         if (input.length > this.maxLength) {
             throw new InvalidInputException(
                 `The input must be shorter than ${this.maxLength} characters.`,
-            );            
+            );
         }
         this.value = input;
     }

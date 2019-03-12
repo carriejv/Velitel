@@ -1,5 +1,5 @@
-import { InvalidInputException } from "../errors/invalid-input-exception";
-import { GenericArgument } from "./generic-argument";
+import { InvalidInputException } from '../errors/invalid-input-exception';
+import { GenericArgument } from './generic-argument';
 
 /**
  * An argument which accepts a number.
@@ -7,15 +7,15 @@ import { GenericArgument } from "./generic-argument";
  */
 export class NumberArgument extends GenericArgument<number> {
 
-    public arg: string;
-    public name: string;
-    public desc: string;
-    public value: number;
+    public arg      : string;
+    public name     : string;
+    public desc     : string;
+    public value    : number;
 
-    public min:   number;
-    public max:   number;
-    public div:   number;
-    public round: number;
+    public min      : number;
+    public max      : number;
+    public div      : number;
+    public round    : number;
 
     constructor(arg: string) {
         super(arg);
@@ -31,8 +31,7 @@ export class NumberArgument extends GenericArgument<number> {
         let pInput: number;
         try {
             pInput = parseFloat(input);
-        }
-        catch(err) {
+        } catch(err) {
             throw new InvalidInputException(
                 err,
             );
@@ -40,17 +39,17 @@ export class NumberArgument extends GenericArgument<number> {
         if (pInput < this.min) {
             throw new InvalidInputException(
                 `The input must be greater than ${this.min}.`,
-            );            
+            );
         }
         if (pInput > this.max) {
             throw new InvalidInputException(
                 `The input must be less than ${this.max}.`,
-            );            
+            );
         }
         if (pInput % this.div !== 0) {
             throw new InvalidInputException(
                 `The input must be divisible by ${this.div}.`,
-            );            
+            );
         }
         if(this.round) {
             pInput = parseFloat(pInput.toFixed(this.round));
@@ -85,7 +84,6 @@ export class NumberArgument extends GenericArgument<number> {
         this.max = max;
         return this;
     }
-
 
     /**
      * Sets a mrequirement that the number is evenly divisible.

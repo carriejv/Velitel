@@ -1,5 +1,5 @@
-import { InvalidInputException } from "../errors/invalid-input-exception";
-import { GenericArgument } from "./generic-argument";
+import { InvalidInputException } from '../errors/invalid-input-exception';
+import { GenericArgument } from './generic-argument';
 
 /**
  * An argument which accepts one of a specific set of string values.
@@ -7,13 +7,13 @@ import { GenericArgument } from "./generic-argument";
  */
 export class EnumArgument extends GenericArgument<string> {
 
-    public arg: string;
-    public name: string;
-    public desc: string;
-    public value: string;
+    public arg      : string;
+    public name     : string;
+    public desc     : string;
+    public value    : string;
 
-    public acceptableValues: string[];
-    public caseSensitive: boolean;
+    public acceptableValues     : string[];
+    public caseSensitive        : boolean;
 
     constructor(arg: string) {
         super(arg);

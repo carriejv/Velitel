@@ -1,4 +1,4 @@
-import { IArgument } from "./i-argument";
+import { IArgument } from './i-argument';
 
 /**
  * An extensible generic argument, which provided basic builder functions
@@ -7,10 +7,10 @@ import { IArgument } from "./i-argument";
  */
 export class GenericArgument<T> implements IArgument<T> {
 
-    public arg: string;
-    public name: string;
-    public desc: string;
-    public value: T;
+    public arg      : string;
+    public name     : string;
+    public desc     : string;
+    public value    : T;
 
     constructor(arg: string) {
         this.arg = arg;
