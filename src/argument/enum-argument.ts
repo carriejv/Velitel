@@ -2,7 +2,7 @@ import { InvalidInputException } from "../errors/invalid-input-exception";
 import { GenericArgument } from "./generic-argument";
 
 /**
- * An argument which excepts one of a specific set of string values.
+ * An argument which accepts one of a specific set of string values.
  * @see IArgument
  */
 export class EnumArgument extends GenericArgument<string> {
