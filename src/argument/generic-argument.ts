@@ -1,4 +1,4 @@
-import { IArgument } from './i-argument';
+import { IArgument } from "./i-argument";
 
 /**
  * An extensible generic argument, which provided basic builder functions
@@ -7,10 +7,10 @@ import { IArgument } from './i-argument';
  */
 export class GenericArgument<T> implements IArgument<T> {
 
-    arg:    string;
-    name:   string
-    desc:   string;
-    value:  T;
+    public arg: string;
+    public name: string;
+    public desc: string;
+    public value: T;
 
     constructor(arg: string) {
         this.arg = arg;
@@ -20,8 +20,8 @@ export class GenericArgument<T> implements IArgument<T> {
         return (this.value !== undefined);
     }
 
-    public parseValue(input: string): boolean {
-        return true;
+    public parseValue(input: string): void {
+        return;
     }
 
     public withName(name: string): GenericArgument<T> {

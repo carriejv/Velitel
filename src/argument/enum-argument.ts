@@ -1,4 +1,5 @@
-import { GenericArgument } from './generic-argument';
+import { InvalidInputException } from "../errors/invalid-input-exception";
+import { GenericArgument } from "./generic-argument";
 
 /**
  * An argument which excepts one of a specific set of string values.
@@ -6,13 +7,13 @@ import { GenericArgument } from './generic-argument';
  */
 export class EnumArgument extends GenericArgument<string> {
 
-    arg:    string;
-    name:   string
-    desc:   string;
-    value:  string;
+    public arg: string;
+    public name: string;
+    public desc: string;
+    public value: string;
 
-    acceptableValues:   string[];
-    caseSensitive:      boolean;
+    public acceptableValues: string[];
+    public caseSensitive: boolean;
 
     constructor(arg: string) {
         super(arg);
@@ -25,14 +26,15 @@ export class EnumArgument extends GenericArgument<string> {
      * withAcceptableValue().
      * @override
      * @param input The raw string input from the command.
-     * @returns True if the input is valid, else false.
+     * @throws InvalidInputException if the input has not been added as an acceptable value.
      */
-    public parseValue(input: string): boolean {
-        if(this.acceptableValues.includes(input)) {
-            this.value = input;
-            return true;
+    public parseValue(input: string): void {
+        if (!this.acceptableValues.includes(input)) {
+            throw new InvalidInputException(
+                `The input must be one of the following: ${this.acceptableValues.toString()}`,
+            );
         }
-        return false;
+        this.value = input;
     }
 
     /**
