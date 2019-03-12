@@ -6,6 +6,7 @@ export class GenericCommand {
     /** The user-friendly name for the command. */
     private name: string;
 
+    /** A Map of all arguments. */
     private args: Map<string, string /*GenericArgument*/>;
 
 }
