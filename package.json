@@ -3,20 +3,40 @@
   "version": "0.1.0",
   "description": "An unopinionated command parsing framework for JavaScript chat bots.",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && node ./dist/index.js",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint --project .",
+    "lintfix": "tslint --fix --project ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/carriejv/velitel.git"
   },
-  "author": "",
+  "keywords": [
+    "command",
+    "parser",
+    "bot",
+    "chat",
+    "slack",
+    "discord",
+    "irc"
+  ],
+  "author": "Carrie Vrtis <carrie@carriejv.com> (https://www.carrievrtis.com)",
+  "contributors": [
+    "Carrie Vrtis <carrie@carriejv.com> (https://www.carrievrtis.com)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://gitlab.com/carriejv/velitel/issues"
   },
   "homepage": "https://gitlab.com/carriejv/velitel#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "tslint": "^5.13.1",
     "typescript": "^3.3.3333"
   }
 }
