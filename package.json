@@ -1,0 +1,22 @@
+{
+  "name": "velitel",
+  "version": "0.1.0",
+  "description": "An unopinionated command parsing framework for JavaScript chat bots.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/carriejv/velitel.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/carriejv/velitel/issues"
+  },
+  "homepage": "https://gitlab.com/carriejv/velitel#readme",
+  "dependencies": {
+    "typescript": "^3.3.3333"
+  }
+}
